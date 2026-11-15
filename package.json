@@ -1,0 +1,40 @@
+{
+  "name": "prizepicksapi-mcp",
+  "version": "0.1.0",
+  "description": "Local stdio MCP server for prizepicksapi.com: PrizePicks lines, goblin and demon tiers, line history, graded results. Keyless demo and payout tools.",
+  "type": "module",
+  "bin": {
+    "prizepicksapi-mcp": "bin/prizepicksapi-mcp.js"
+  },
+  "files": [
+    "bin",
+    "README.md",
+    "LICENSE",
+    "server.json"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "mcpName": "com.prizepicksapi/server",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "prizepicks",
+    "player props",
+    "dfs",
+    "sports data"
+  ],
+  "author": "Stunning Couches LLC <support@prizepicksapi.com>",
+  "license": "MIT",
+  "homepage": "https://prizepicksapi.com/prizepicks-mcp-server",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prizepicksapi/prizepicksapi-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prizepicksapi/prizepicksapi-mcp/issues"
+  }
+}
