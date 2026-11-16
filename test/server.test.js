@@ -45,7 +45,7 @@ function startMcp(env) {
   return {child, rpc, notify, stop: () => child.stdin.end()};
 }
 
-test('keyless: initialize, tools/list shows only keyless tools, demo call works', async () => {
+test('keyless: initialize, tools/list shows every tool, demo call works, keyed call points to sign-up', async () => {
   const api = await mockApi();
   const mcp = startMcp({PRIZEPICKS_API_BASE_URL: api.base});
   try {
@@ -56,7 +56,7 @@ test('keyless: initialize, tools/list shows only keyless tools, demo call works'
     const list = await mcp.rpc('tools/list', {});
     const names = list.result.tools.map((t) => t.name);
     assert.ok(names.includes('demo_projections') && names.includes('payout_table'));
-    assert.ok(!names.includes('get_projections'));
+    assert.ok(names.includes('get_projections') && names.length === 15);
     const call = await mcp.rpc('tools/call', {name: 'demo_projections', arguments: {league: 'NBA', limit: 1}});
     assert.equal(call.result.isError, false);
     assert.equal(JSON.parse(call.result.content[0].text).data[0].id, 'demo_nba_001');

@@ -18,7 +18,7 @@ prizepicksapi.com is an independent service operated by Stunning Couches LLC. It
 npx -y prizepicksapi-mcp
 ```
 
-With no key it lists five keyless tools. Set `PRIZEPICKS_API_KEY` (free key, 100 credits a month, no card: https://prizepicksapi.com/sign-up?utm_source=github&utm_medium=readme&utm_campaign=prizepicksapi-mcp) to add the live data tools.
+It lists all fifteen tools; the five keyless ones work with no key. Set `PRIZEPICKS_API_KEY` (free key, 100 credits a month, no card: https://prizepicksapi.com/sign-up?utm_source=github&utm_medium=readme&utm_campaign=prizepicksapi-mcp) to use the live data tools; without it they return the sign-up link.
 
 ### Claude Desktop / Cursor (`mcpServers` JSON)
 
