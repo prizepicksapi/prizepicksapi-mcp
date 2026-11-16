@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "prizepicksapi": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "prizepicksapi-mcp"
+      ],
+      "env": {
+        "PRIZEPICKS_API_KEY": ""
+      }
+    }
+  }
+}
