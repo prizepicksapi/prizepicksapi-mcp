@@ -1,6 +1,12 @@
-# prizepicksapi-mcp
+# PrizePicks MCP server: prizepicksapi-mcp
 
-A local stdio MCP server for [prizepicksapi.com](https://prizepicksapi.com): PrizePicks player-prop lines, goblin and demon tiers, recorded line history, the change feed, graded results and sportsbook comparison, inside Claude Desktop, Claude Code, Cursor, Codex, Gemini CLI or any MCP client. Zero dependencies, Node 18+.
+A PrizePicks MCP server for Claude, Cursor, Codex and any MCP client. Ask an AI agent for current PrizePicks lines, line moves and graded results; it answers from live data through prizepicksapi.com instead of guessing.
+
+[Website](https://prizepicksapi.com/?utm_source=github&utm_medium=readme&utm_campaign=prizepicksapi-mcp) | [Docs](https://prizepicksapi.com/docs?utm_source=github&utm_medium=readme&utm_campaign=prizepicksapi-mcp) | [Free API key](https://prizepicksapi.com/sign-up?utm_source=github&utm_medium=readme&utm_campaign=prizepicksapi-mcp) | [Pricing](https://prizepicksapi.com/pricing?utm_source=github&utm_medium=readme&utm_campaign=prizepicksapi-mcp) | [All SDKs](https://prizepicksapi.com/sdks?utm_source=github&utm_medium=readme&utm_campaign=prizepicksapi-mcp)
+
+Also for prizepicksapi.com: [Python: `pip install prizepicksapi`](https://github.com/prizepicksapi/prizepicksapi-python) | [JavaScript: `npm install prizepicksapi`](https://github.com/prizepicksapi/prizepicksapi-js)
+
+A local stdio MCP server for [prizepicksapi.com](https://prizepicksapi.com/?utm_source=github&utm_medium=readme&utm_campaign=prizepicksapi-mcp): PrizePicks player-prop lines, goblin and demon tiers, recorded line history, the change feed, graded results and sportsbook comparison, inside Claude Desktop, Claude Code, Cursor, Codex, Gemini CLI or any MCP client. Zero dependencies, Node 18+.
 
 A hosted remote MCP server already exists at `https://prizepicksapi.com/api/mcp` (Streamable HTTP, listed in the official MCP registry as `com.prizepicksapi/server`). Use the remote one when your client supports remote servers; use this package when you want a local stdio process.
 
@@ -12,7 +18,7 @@ prizepicksapi.com is an independent service operated by Stunning Couches LLC. It
 npx -y prizepicksapi-mcp
 ```
 
-With no key it lists five keyless tools. Set `PRIZEPICKS_API_KEY` (free key, 100 credits a month, no card: https://prizepicksapi.com/sign-up) to add the live data tools.
+With no key it lists five keyless tools. Set `PRIZEPICKS_API_KEY` (free key, 100 credits a month, no card: https://prizepicksapi.com/sign-up?utm_source=github&utm_medium=readme&utm_campaign=prizepicksapi-mcp) to add the live data tools.
 
 ### Claude Desktop / Cursor (`mcpServers` JSON)
 
