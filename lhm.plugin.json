@@ -1,0 +1,158 @@
+{
+  "author": "Stunning Couches LLC",
+  "description": "Local stdio MCP server for prizepicksapi.com: PrizePicks lines, goblin and demon tiers, line history, graded results. Keyless demo and payout tools.",
+  "homepage": "https://prizepicksapi.com/prizepicks-mcp-server",
+  "identifier": "prizepicksapi-prizepicksapi-mcp",
+  "name": "PrizePicks API",
+  "prompts": [],
+  "resources": [],
+  "tags": [
+    "mcp",
+    "model-context-protocol",
+    "prizepicks",
+    "player props",
+    "dfs",
+    "sports data"
+  ],
+  "tools": [
+    {
+      "name": "demo_projections",
+      "description": "Fictional sample PrizePicks projections with the exact live schema (is_demo: true). Use to learn the fields before calling live data. No key.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "league": {
+            "type": "string",
+            "description": "League code, for example NBA, NFL, NHL, CFB, SOCCER. Comma-separate several."
+          },
+          "stat": {
+            "type": "string",
+            "description": "Exact market name, for example Points or Pass Yards."
+          },
+          "tier": {
+            "type": "string",
+            "enum": [
+              "standard",
+              "goblin",
+              "demon"
+            ],
+            "description": "Only lines with this tier on a selection."
+          },
+          "search": {
+            "type": "string",
+            "description": "Player name search."
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000,
+            "description": "Rows per page (1-200, or up to 1000 with view=compact)."
+          },
+          "cursor": {
+            "type": "string",
+            "description": "meta.next_cursor from the previous page."
+          }
+        },
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "demo_line_history",
+      "description": "Fictional line history for a demo projection id such as demo_nba_001. No key.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Demo projection id."
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 200,
+            "description": "Rows per page."
+          },
+          "cursor": {
+            "type": "string",
+            "description": "Cursor."
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "demo_changes",
+      "description": "Fictional change-feed events (offer.changed etc.) in the live schema. No key.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "league": {
+            "type": "string",
+            "description": "League code, for example NBA, NFL, NHL, CFB, SOCCER. Comma-separate several."
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 200,
+            "description": "Rows per page."
+          },
+          "cursor": {
+            "type": "string",
+            "description": "Cursor."
+          }
+        },
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "payout_table",
+      "description": "Official PrizePicks standard entry payout multipliers (power and flex) with derived break-even probabilities. Real reference data, no key. Goblin, demon and adjusted-odds lines pay differently and are not estimated.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "credit_cost",
+      "description": "Quote how many credits a REST request path costs before running it, plus the plan list. No key.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Request path with query, for example /api/v1/projections?league=NBA&limit=200"
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": true
+      }
+    }
+  ],
+  "version": "0.1.0"
+}
